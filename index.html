@@ -1,652 +1,1616 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
-  <title>A.N. Store · Menu Premium</title>
-  <!-- Font Awesome (ícones modernos) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>A.N. Store · E-commerce Completo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
 
-    body {
-      background: #f8f6f3;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+        body {
+            background: #f8f6f3;
+            min-height: 100vh;
+        }
 
-    /* HEADER / NAV PRINCIPAL */
-    .top-bar {
-      background: #111111;
-      color: #EAEAEA;
-      font-size: 0.75rem;
-      padding: 6px 24px;
-      display: flex;
-      justify-content: flex-end;
-      gap: 24px;
-      border-bottom: 1px solid #2F2F2F;
-    }
-    .top-bar a {
-      color: #EAEAEA;
-      text-decoration: none;
-      letter-spacing: 0.3px;
-      transition: color 0.2s;
-    }
-    .top-bar a:hover {
-      color: #C8A96A;
-    }
+        /* TOP BAR */
+        .top-bar {
+            background: #111111;
+            color: #EAEAEA;
+            font-size: 0.7rem;
+            padding: 6px 24px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 24px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #2F2F2F;
+        }
+        .top-bar a {
+            color: #EAEAEA;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-bar a:hover {
+            color: #C8A96A;
+        }
 
-    .header-main {
-      background: #FFFFFF;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #EAEAEA;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
-    }
+        /* HEADER */
+        .header-main {
+            background: #FFFFFF;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #EAEAEA;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+        }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-area h1 {
-      font-weight: 300;
-      font-size: 1.9rem;
-      letter-spacing: 2px;
-      color: #111111;
-      background: linear-gradient(135deg, #111 40%, #C8A96A);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .logo-area i {
-      font-size: 2rem;
-      color: #C8A96A;
-      background: #111;
-      padding: 8px;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #C8A96A;
-      background: #111;
-    }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .logo-area h1 {
+            font-weight: 300;
+            font-size: 1.9rem;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #111 40%, #C8A96A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-area i {
+            font-size: 2rem;
+            color: #C8A96A;
+            background: #111;
+            padding: 8px;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .search-wrapper {
-      flex: 1 1 300px;
-      max-width: 480px;
-      margin: 0 24px;
-      position: relative;
-    }
-    .search-wrapper input {
-      width: 100%;
-      padding: 12px 20px 12px 48px;
-      border-radius: 40px;
-      border: 1px solid #EAEAEA;
-      background: #F9F9F9;
-      font-size: 0.95rem;
-      transition: all 0.25s;
-      outline: none;
-    }
-    .search-wrapper input:focus {
-      border-color: #C8A96A;
-      background: #FFFFFF;
-      box-shadow: 0 0 0 4px rgba(200, 169, 106, 0.15);
-    }
-    .search-wrapper i {
-      position: absolute;
-      left: 18px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #888;
-      font-size: 1rem;
-    }
+        .search-wrapper {
+            flex: 1 1 300px;
+            max-width: 480px;
+            margin: 0 24px;
+            position: relative;
+        }
+        .search-wrapper input {
+            width: 100%;
+            padding: 12px 20px 12px 48px;
+            border-radius: 40px;
+            border: 1px solid #EAEAEA;
+            background: #F9F9F9;
+            font-size: 0.95rem;
+            transition: all 0.25s;
+            outline: none;
+        }
+        .search-wrapper input:focus {
+            border-color: #C8A96A;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 4px rgba(200, 169, 106, 0.15);
+        }
+        .search-wrapper i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .header-actions a {
-      color: #2F2F2F;
-      font-size: 1.2rem;
-      transition: color 0.2s;
-      position: relative;
-      text-decoration: none;
-    }
-    .header-actions a:hover {
-      color: #C8A96A;
-    }
-    .header-actions .badge {
-      position: absolute;
-      top: -8px;
-      right: -10px;
-      background: #C8A96A;
-      color: #111;
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 30px;
-    }
-    .header-actions .user-icon {
-      background: #EAEAEA;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #2F2F2F;
-    }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .header-actions a {
+            color: #2F2F2F;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+            position: relative;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .header-actions a:hover {
+            color: #C8A96A;
+        }
+        .header-actions .badge {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: #C8A96A;
+            color: #111;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 30px;
+            min-width: 18px;
+            text-align: center;
+        }
 
-    /* MENU MEGA (desktop) */
-    .mega-menu {
-      background: #FFFFFF;
-      border-bottom: 1px solid #EAEAEA;
-      padding: 0 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 78px;
-      z-index: 999;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-    .mega-menu ul {
-      display: flex;
-      list-style: none;
-      gap: 2px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .mega-menu > ul > li {
-      position: relative;
-      padding: 14px 16px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      letter-spacing: 0.3px;
-      cursor: pointer;
-      color: #111;
-      border-radius: 8px 8px 0 0;
-      transition: background 0.2s;
-    }
-    .mega-menu > ul > li:hover {
-      background: #F5F3F0;
-      color: #C8A96A;
-    }
-    .mega-menu > ul > li > a {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .mega-menu > ul > li i {
-      font-size: 0.8rem;
-      color: #888;
-    }
+        .hamburger {
+            display: none;
+            font-size: 1.6rem;
+            background: none;
+            border: none;
+            color: #111;
+            cursor: pointer;
+        }
 
-    /* MEGA DROPDOWN */
-    .mega-dropdown {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #FFFFFF;
-      min-width: 780px;
-      padding: 28px 24px;
-      border-radius: 0 0 16px 16px;
-      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
-      border-top: 2px solid #C8A96A;
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px 30px;
-      z-index: 1000;
-      transition: opacity 0.2s;
-    }
-    .mega-menu > ul > li:hover .mega-dropdown {
-      display: grid;
-    }
+        /* MENU */
+        .mega-menu {
+            background: #FFFFFF;
+            border-bottom: 1px solid #EAEAEA;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 78px;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .mega-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 2px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .mega-menu > ul > li {
+            position: relative;
+            padding: 14px 16px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: #111;
+            border-radius: 8px 8px 0 0;
+            transition: background 0.2s;
+        }
+        .mega-menu > ul > li:hover {
+            background: #F5F3F0;
+            color: #C8A96A;
+        }
+        .mega-menu > ul > li > a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mega-menu > ul > li i {
+            font-size: 0.8rem;
+            color: #888;
+        }
 
-    .mega-dropdown .col {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .mega-dropdown .col h4 {
-      font-weight: 600;
-      color: #111;
-      border-bottom: 1px solid #EAEAEA;
-      padding-bottom: 6px;
-      margin-bottom: 8px;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: #2F2F2F;
-    }
-    .mega-dropdown .col a {
-      text-decoration: none;
-      color: #2F2F2F;
-      font-size: 0.85rem;
-      padding: 4px 0;
-      transition: 0.15s;
-      border-radius: 4px;
-    }
-    .mega-dropdown .col a:hover {
-      color: #C8A96A;
-      padding-left: 6px;
-      background: #F9F6F0;
-    }
-    .mega-dropdown .col .highlight {
-      color: #C8A96A;
-      font-weight: 500;
-    }
+        .mega-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #FFFFFF;
+            min-width: 780px;
+            padding: 28px 24px;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+            border-top: 2px solid #C8A96A;
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px 30px;
+            z-index: 1000;
+        }
+        .mega-menu > ul > li:hover .mega-dropdown {
+            display: grid;
+        }
 
-    /* MOBILE HAMBURGER */
-    .hamburger {
-      display: none;
-      font-size: 1.6rem;
-      background: none;
-      border: none;
-      color: #111;
-      cursor: pointer;
-    }
+        .mega-dropdown .col {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .mega-dropdown .col h4 {
+            font-weight: 600;
+            color: #111;
+            border-bottom: 1px solid #EAEAEA;
+            padding-bottom: 6px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #2F2F2F;
+        }
+        .mega-dropdown .col a {
+            text-decoration: none;
+            color: #2F2F2F;
+            font-size: 0.85rem;
+            padding: 4px 0;
+            transition: 0.15s;
+            cursor: pointer;
+        }
+        .mega-dropdown .col a:hover {
+            color: #C8A96A;
+            padding-left: 6px;
+            background: #F9F6F0;
+        }
 
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .mega-dropdown {
-        min-width: 480px;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+        /* PÁGINAS */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        .page.active {
+            display: block;
+        }
 
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-      .mega-menu {
-        display: none;
-        flex-direction: column;
-        background: white;
-        padding: 0 12px 12px;
-        top: 70px;
-        border-top: 1px solid #EAEAEA;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        box-shadow: 0 20px 30px rgba(0,0,0,0.05);
-      }
-      .mega-menu.open {
-        display: flex;
-      }
-      .mega-menu ul {
-        flex-direction: column;
-        width: 100%;
-      }
-      .mega-menu > ul > li {
-        padding: 10px 0;
-        border-bottom: 1px solid #EAEAEA;
-        width: 100%;
-      }
-      .mega-dropdown {
-        position: static;
-        min-width: 100%;
-        box-shadow: none;
-        border-top: 1px solid #EAEAEA;
-        border-radius: 0;
-        padding: 16px 12px;
-        grid-template-columns: 1fr 1fr;
-        background: #FAFAFA;
-        margin-top: 6px;
-      }
-      .header-main {
-        flex-wrap: nowrap;
-        padding: 8px 16px;
-      }
-      .search-wrapper {
-        margin: 0 8px;
-        flex: 1 1 140px;
-        min-width: 120px;
-      }
-      .search-wrapper input {
-        padding: 8px 12px 8px 36px;
-        font-size: 0.8rem;
-      }
-      .logo-area h1 {
-        font-size: 1.4rem;
-      }
-      .top-bar {
-        display: none;
-      }
-    }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    @media (max-width: 480px) {
-      .mega-dropdown {
-        grid-template-columns: 1fr;
-      }
-      .header-actions a {
-        font-size: 1rem;
-      }
-      .header-actions .user-icon {
-        width: 32px;
-        height: 32px;
-      }
-    }
+        /* HOME */
+        .hero-banner {
+            background: linear-gradient(135deg, #111 0%, #2F2F2F 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .hero-banner h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .hero-banner h2 span {
+            color: #C8A96A;
+        }
+        .hero-banner p {
+            margin-top: 12px;
+            color: #aaa;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-banner .btn-hero {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 40px;
+            background: #C8A96A;
+            color: #111;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .hero-banner .btn-hero:hover {
+            background: #d4b87a;
+            transform: scale(1.05);
+        }
 
-    /* FOOTER PREVIEW (apenas demonstração) */
-    .footer-demo {
-      background: #111;
-      color: #EAEAEA;
-      padding: 32px 24px 20px;
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-      gap: 24px;
-      border-top: 3px solid #C8A96A;
-    }
-    .footer-demo .col h5 {
-      color: #C8A96A;
-      font-weight: 400;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-      font-size: 0.9rem;
-    }
-    .footer-demo .col a {
-      display: block;
-      color: #aaa;
-      text-decoration: none;
-      font-size: 0.8rem;
-      padding: 4px 0;
-    }
-    .footer-demo .col a:hover {
-      color: #fff;
-    }
-    .footer-demo .social i {
-      font-size: 1.4rem;
-      margin-right: 12px;
-      color: #aaa;
-      transition: 0.2s;
-    }
-    .footer-demo .social i:hover {
-      color: #C8A96A;
-    }
-    .footer-copy {
-      background: #0a0a0a;
-      color: #555;
-      text-align: center;
-      padding: 14px;
-      font-size: 0.7rem;
-      letter-spacing: 0.5px;
-      border-top: 1px solid #2F2F2F;
-    }
+        .category-grid-home {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            padding: 0 24px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .category-card-home {
+            background: white;
+            border-radius: 16px;
+            padding: 24px 12px;
+            text-align: center;
+            border: 1px solid #EAEAEA;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .category-card-home:hover {
+            transform: translateY(-4px);
+            border-color: #C8A96A;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .category-card-home i {
+            font-size: 2.5rem;
+            color: #C8A96A;
+            margin-bottom: 8px;
+        }
+        .category-card-home h4 {
+            font-size: 0.9rem;
+            color: #111;
+        }
 
-    /* Espaço para o conteúdo fictício */
-    .hero-placeholder {
-      padding: 40px 24px;
-      text-align: center;
-      color: #2F2F2F;
-    }
-    .hero-placeholder h2 {
-      font-weight: 300;
-      font-size: 2rem;
-      letter-spacing: 1px;
-      color: #111;
-    }
-    .hero-placeholder p {
-      max-width: 600px;
-      margin: 12px auto;
-      color: #555;
-    }
-    .chip {
-      background: #EAEAEA;
-      padding: 6px 16px;
-      border-radius: 30px;
-      display: inline-block;
-      font-size: 0.8rem;
-      margin: 4px;
-      color: #2F2F2F;
-    }
-  </style>
+        /* FILTROS */
+        .filters-bar {
+            background: white;
+            padding: 16px 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            border-bottom: 1px solid #EAEAEA;
+        }
+        .filters-bar select, .filters-bar input {
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid #EAEAEA;
+            background: #F9F9F9;
+            font-size: 0.85rem;
+            outline: none;
+            cursor: pointer;
+        }
+        .filters-bar select:focus, .filters-bar input:focus {
+            border-color: #C8A96A;
+        }
+        .filters-bar label {
+            font-size: 0.85rem;
+            color: #2F2F2F;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* PRODUTOS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+            padding: 32px 24px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid #EAEAEA;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            border-color: #C8A96A;
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #F5F3F0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #C8A96A;
+            margin-bottom: 12px;
+        }
+
+        .product-brand {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #C8A96A;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #111;
+            margin: 4px 0 6px;
+            line-height: 1.3;
+            min-height: 44px;
+        }
+
+        .product-category {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111;
+            margin: 8px 0;
+        }
+
+        .product-price .old {
+            font-size: 0.8rem;
+            color: #999;
+            text-decoration: line-through;
+            font-weight: 400;
+            margin-left: 8px;
+        }
+
+        .product-rating {
+            color: #C8A96A;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .btn-cart {
+            flex: 1;
+            padding: 10px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-cart:hover {
+            background: #C8A96A;
+        }
+
+        .btn-wish {
+            width: 40px;
+            padding: 10px;
+            background: #F5F3F0;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: #2F2F2F;
+        }
+        .btn-wish:hover {
+            background: #EAEAEA;
+            color: #C8A96A;
+        }
+
+        .no-products {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+            grid-column: 1 / -1;
+        }
+        .no-products i {
+            font-size: 3rem;
+            color: #EAEAEA;
+            margin-bottom: 16px;
+        }
+
+        /* CARRINHO */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            max-width: 90vw;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 30px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #EAEAEA;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3 {
+            font-weight: 600;
+            color: #111;
+        }
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 24px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #F5F3F0;
+            align-items: center;
+        }
+        .cart-item-image {
+            width: 60px;
+            height: 60px;
+            background: #F5F3F0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+        .cart-item-info {
+            flex: 1;
+        }
+        .cart-item-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #111;
+        }
+        .cart-item-price {
+            color: #C8A96A;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .cart-item-qty button {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #EAEAEA;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .cart-item-qty button:hover {
+            background: #F5F3F0;
+        }
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .cart-item-remove:hover {
+            color: #e74c3c;
+        }
+
+        .cart-footer {
+            padding: 20px 24px;
+            border-top: 1px solid #EAEAEA;
+            background: #FAFAFA;
+        }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .btn-checkout {
+            width: 100%;
+            padding: 14px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-checkout:hover {
+            background: #C8A96A;
+        }
+        .cart-empty {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+        }
+        .cart-empty i {
+            font-size: 3rem;
+            color: #EAEAEA;
+            margin-bottom: 12px;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 1999;
+            display: none;
+        }
+        .cart-overlay.open {
+            display: block;
+        }
+
+        /* PÁGINA DE DETALHES */
+        .product-detail {
+            max-width: 1200px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .product-detail-image {
+            aspect-ratio: 1/1;
+            background: #F5F3F0;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+        .product-detail-info h2 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 8px;
+        }
+        .product-detail-info .brand {
+            color: #C8A96A;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .product-detail-info .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 16px 0;
+        }
+        .product-detail-info .old-price {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 12px;
+            font-weight: 400;
+        }
+        .product-detail-info .description {
+            color: #555;
+            line-height: 1.6;
+            margin: 16px 0;
+        }
+        .product-detail-info .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 16px 0;
+            padding: 16px;
+            background: #F9F9F9;
+            border-radius: 12px;
+        }
+        .product-detail-info .specs span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .product-detail-info .specs strong {
+            color: #111;
+        }
+        .btn-add-detail {
+            padding: 14px 48px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 16px;
+        }
+        .btn-add-detail:hover {
+            background: #C8A96A;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .mega-menu {
+                display: none;
+                flex-direction: column;
+                background: white;
+                padding: 0 12px 12px;
+                top: 70px;
+                border-top: 1px solid #EAEAEA;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+            .mega-menu.open {
+                display: flex;
+            }
+            .mega-menu ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            .mega-menu > ul > li {
+                padding: 10px 0;
+                border-bottom: 1px solid #EAEAEA;
+                width: 100%;
+            }
+            .mega-dropdown {
+                position: static;
+                min-width: 100%;
+                box-shadow: none;
+                border-top: 1px solid #EAEAEA;
+                border-radius: 0;
+                padding: 16px 12px;
+                grid-template-columns: 1fr 1fr;
+                background: #FAFAFA;
+                margin-top: 6px;
+                display: none !important;
+            }
+            .mega-menu > ul > li:hover .mega-dropdown {
+                display: grid !important;
+            }
+            .header-main {
+                flex-wrap: nowrap;
+                padding: 8px 16px;
+            }
+            .search-wrapper {
+                margin: 0 8px;
+                flex: 1 1 140px;
+                min-width: 120px;
+            }
+            .search-wrapper input {
+                padding: 8px 12px 8px 36px;
+                font-size: 0.8rem;
+            }
+            .logo-area h1 {
+                font-size: 1.4rem;
+            }
+            .top-bar {
+                display: none;
+            }
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                padding: 16px;
+                gap: 16px;
+            }
+            .filters-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero-banner h2 {
+                font-size: 1.8rem;
+            }
+            .category-grid-home {
+                grid-template-columns: repeat(3, 1fr);
+                padding: 0 12px 24px;
+            }
+            .product-detail-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 24px;
+            }
+            .product-detail-image {
+                font-size: 4rem;
+            }
+            .cart-sidebar {
+                width: 100%;
+                max-width: 100%;
+                right: -100%;
+            }
+            .product-detail-info .specs {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                padding: 12px;
+            }
+            .product-card {
+                padding: 12px;
+            }
+            .product-name {
+                font-size: 0.8rem;
+                min-height: 36px;
+            }
+            .product-price {
+                font-size: 0.95rem;
+            }
+            .category-grid-home {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* FOOTER */
+        .footer-demo {
+            background: #111;
+            color: #EAEAEA;
+            padding: 32px 24px 20px;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+            gap: 24px;
+            border-top: 3px solid #C8A96A;
+        }
+        .footer-demo .col h5 {
+            color: #C8A96A;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .footer-demo .col a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 4px 0;
+            cursor: pointer;
+        }
+        .footer-demo .col a:hover {
+            color: #fff;
+        }
+        .footer-demo .social i {
+            font-size: 1.4rem;
+            margin-right: 12px;
+            color: #aaa;
+            transition: 0.2s;
+        }
+        .footer-demo .social i:hover {
+            color: #C8A96A;
+        }
+        .footer-copy {
+            background: #0a0a0a;
+            color: #555;
+            text-align: center;
+            padding: 14px;
+            font-size: 0.7rem;
+            border-top: 1px solid #2F2F2F;
+        }
+
+        .breadcrumb {
+            padding: 16px 24px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        .breadcrumb a {
+            color: #C8A96A;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <a href="#"><i class="fas fa-tag"></i> Promoções</a>
-    <a href="#"><i class="fas fa-gift"></i> Kits Presente</a>
-    <a href="#"><i class="fas fa-headset"></i> Atendimento</a>
-    <a href="#"><i class="fas fa-store"></i> Blog</a>
-  </div>
-
-  <!-- HEADER PRINCIPAL -->
-  <header class="header-main">
-    <div class="logo-area">
-      <i class="fas fa-spa"></i>
-      <h1>A.N. Store</h1>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <a href="#" onclick="showPage('home')"><i class="fas fa-home"></i> Início</a>
+        <a href="#" onclick="showPage('promocoes')"><i class="fas fa-tag"></i> Promoções</a>
+        <a href="#" onclick="showPage('kits')"><i class="fas fa-gift"></i> Kits Presente</a>
+        <a href="#"><i class="fas fa-headset"></i> Atendimento</a>
+        <a href="#"><i class="fas fa-store"></i> Blog</a>
     </div>
 
-    <div class="search-wrapper">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="Buscar perfume, marca, fragrância...">
+    <!-- HEADER -->
+    <header class="header-main">
+        <div class="logo-area" onclick="showPage('home')">
+            <i class="fas fa-spa"></i>
+            <h1>A.N. Store</h1>
+        </div>
+
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Buscar perfume, marca, fragrância..." oninput="applyFilters()">
+        </div>
+
+        <div class="header-actions">
+            <a onclick="toggleWishlist()"><i class="far fa-heart"></i></a>
+            <a onclick="openCart()"><i class="fas fa-shopping-bag"></i><span class="badge" id="cartBadge">0</span></a>
+            <a onclick="showPage('conta')"><i class="far fa-user"></i></a>
+            <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- MENU -->
+    <nav class="mega-menu" id="megaMenu">
+        <ul>
+            <li><a onclick="showPage('home')"><i class="fas fa-home"></i> Início</a></li>
+            <li>
+                <a><i class="fas fa-female"></i> Femininos <i class="fas fa-chevron-down"></i></a>
+                <div class="mega-dropdown">
+                    <div class="col"><h4>Destaques</h4><a onclick="navigateTo('feminino','Lançamento')">Lançamentos</a><a onclick="navigateTo('feminino','Mais Vendido')">Mais Vendidos</a><a onclick="navigateTo('feminino','Exclusivo')">Exclusivos</a></div>
+                    <div class="col"><h4>Linhas</h4><a onclick="navigateToBrand('Natura','Feminino')">Natura</a><a onclick="navigateToBrand('O Boticário','Feminino')">O Boticário</a></div>
+                    <div class="col"><h4>Coleções</h4><a onclick="navigateTo('feminino','Eau de Parfum')">Eau de Parfum</a><a onclick="navigateTo('feminino','Eau de Toilette')">Eau de Toilette</a></div>
+                </div>
+            </li>
+            <li>
+                <a><i class="fas fa-male"></i> Masculinos <i class="fas fa-chevron-down"></i></a>
+                <div class="mega-dropdown">
+                    <div class="col"><h4>Destaques</h4><a onclick="navigateTo('masculino','Lançamento')">Lançamentos</a><a onclick="navigateTo('masculino','Mais Vendido')">Mais Vendidos</a></div>
+                    <div class="col"><h4>Linhas</h4><a onclick="navigateToBrand('Natura','Masculino')">Natura</a><a onclick="navigateToBrand('O Boticário','Masculino')">O Boticário</a></div>
+                </div>
+            </li>
+            <li><a onclick="navigateTo('unissex','')"><i class="fas fa-venus-mars"></i> Unissex</a></li>
+            <li><a onclick="showPage('kits')"><i class="fas fa-gift"></i> Kits</a></li>
+            <li><a onclick="navigateToCategory('Corpo e Banho')"><i class="fas fa-bath"></i> Corpo & Banho</a></li>
+            <li><a onclick="navigateToCategory('Cabelos')"><i class="fas fa-cut"></i> Cabelos</a></li>
+            <li><a onclick="navigateToCategory('Maquiagem')"><i class="fas fa-paint-brush"></i> Maquiagem</a></li>
+            <li><a onclick="navigateToCategory('Cuidados com a Pele')"><i class="fas fa-leaf"></i> Pele</a></li>
+            <li><a onclick="navigateToCategory('Cuidados Masculinos')"><i class="fas fa-user-tie"></i> Masculino Care</a></li>
+            <li><a onclick="navigateToCategory('Infantil')"><i class="fas fa-baby"></i> Infantil</a></li>
+            <li><a onclick="navigateToCategory('Casa')"><i class="fas fa-home"></i> Casa</a></li>
+            <li><a onclick="showPage('catalogo')"><i class="fas fa-th-large"></i> Catálogo Completo</a></li>
+        </ul>
+    </nav>
+
+    <!-- OVERLAY CARRINHO -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <!-- CARRINHO SIDEBAR -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Carrinho</h3>
+            <button class="cart-close" onclick="closeCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Seu carrinho está vazio</p>
+                <small style="color:#aaa;">Adicione produtos para começar</small>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+        </div>
     </div>
 
-    <div class="header-actions">
-      <a href="#" aria-label="Favoritos"><i class="far fa-heart"></i></a>
-      <a href="#" aria-label="Lista de desejos"><i class="far fa-star"></i></a>
-      <a href="#" aria-label="Carrinho"><i class="fas fa-shopping-bag"></i><span class="badge">3</span></a>
-      <a href="#" class="user-icon"><i class="far fa-user"></i></a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <!-- ========== PÁGINA HOME ========== -->
+    <div class="page active" id="page-home">
+        <div class="hero-banner">
+            <h2>Bem-vindo à <span>A.N. Store</span></h2>
+            <p>Os melhores perfumes e produtos de beleza das marcas Natura e O Boticário. Elegância e sofisticação em cada detalhe.</p>
+            <a class="btn-hero" onclick="showPage('catalogo')">Explorar Catálogo</a>
+        </div>
+
+        <h3 style="padding:0 24px;font-weight:300;color:#111;max-width:1200px;margin:0 auto 16px;">Categorias <span style="color:#C8A96A;">·</span> Destaques</h3>
+        <div class="category-grid-home">
+            <div class="category-card-home" onclick="navigateTo('feminino','')"><i class="fas fa-female"></i><h4>Femininos</h4></div>
+            <div class="category-card-home" onclick="navigateTo('masculino','')"><i class="fas fa-male"></i><h4>Masculinos</h4></div>
+            <div class="category-card-home" onclick="navigateTo('unissex','')"><i class="fas fa-venus-mars"></i><h4>Unissex</h4></div>
+            <div class="category-card-home" onclick="showPage('kits')"><i class="fas fa-gift"></i><h4>Kits</h4></div>
+            <div class="category-card-home" onclick="navigateToCategory('Corpo e Banho')"><i class="fas fa-bath"></i><h4>Corpo & Banho</h4></div>
+            <div class="category-card-home" onclick="navigateToCategory('Cabelos')"><i class="fas fa-cut"></i><h4>Cabelos</h4></div>
+            <div class="category-card-home" onclick="navigateToCategory('Maquiagem')"><i class="fas fa-paint-brush"></i><h4>Maquiagem</h4></div>
+            <div class="category-card-home" onclick="navigateToCategory('Cuidados com a Pele')"><i class="fas fa-leaf"></i><h4>Cuidados com a Pele</h4></div>
+            <div class="category-card-home" onclick="navigateToCategory('Casa')"><i class="fas fa-home"></i><h4>Casa & Aromas</h4></div>
+            <div class="category-card-home" onclick="navigateToCategory('Infantil')"><i class="fas fa-baby"></i><h4>Infantil</h4></div>
+        </div>
+
+        <h3 style="padding:0 24px;font-weight:300;color:#111;max-width:1200px;margin:0 auto 16px;">Produtos em Destaque</h3>
+        <div class="products-grid" id="homeProducts"></div>
     </div>
-  </header>
 
-  <!-- MEGA MENU -->
-  <nav class="mega-menu" id="megaMenu">
-    <ul>
-      <!-- Início -->
-      <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
-
-      <!-- Perfumes Femininos -->
-      <li>
-        <a href="#"><i class="fas fa-female"></i> Femininos <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><h4>Destaques</h4><a href="#">Lançamentos</a><a href="#">Mais Vendidos</a><a href="#">Exclusivos</a><a href="#">Coleções</a></div>
-          <div class="col"><h4>Linhas</h4><a href="#">Natura Completa</a><a href="#">O Boticário Completa</a><a href="#">Eau de Parfum</a><a href="#">Eau de Toilette</a></div>
-          <div class="col"><h4>Fragrâncias</h4><a href="#">Floral</a><a href="#">Amadeirado</a><a href="#">Cítrico</a><a href="#">Oriental</a></div>
+    <!-- ========== PÁGINA CATÁLOGO ========== -->
+    <div class="page" id="page-catalogo">
+        <div class="breadcrumb">
+            <a onclick="showPage('home')">Home</a> / <span>Catálogo Completo</span>
         </div>
-      </li>
-
-      <!-- Perfumes Masculinos -->
-      <li>
-        <a href="#"><i class="fas fa-male"></i> Masculinos <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><h4>Destaques</h4><a href="#">Lançamentos</a><a href="#">Mais Vendidos</a><a href="#">Exclusivos</a><a href="#">Coleções</a></div>
-          <div class="col"><h4>Linhas</h4><a href="#">Natura Completa</a><a href="#">O Boticário Completa</a><a href="#">Eau de Parfum</a><a href="#">Eau de Toilette</a></div>
-          <div class="col"><h4>Fragrâncias</h4><a href="#">Amadeirado</a><a href="#">Especiado</a><a href="#">Cítrico</a><a href="#">Aromático</a></div>
+        <div class="filters-bar">
+            <label><i class="fas fa-filter"></i> Filtros:</label>
+            <select id="brandFilter" onchange="applyFilters()">
+                <option value="">Todas as marcas</option>
+                <option value="Natura">Natura</option>
+                <option value="O Boticário">O Boticário</option>
+            </select>
+            <select id="genderFilter" onchange="applyFilters()">
+                <option value="">Todos os gêneros</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Unissex">Unissex</option>
+                <option value="Infantil">Infantil</option>
+            </select>
+            <select id="categoryFilter" onchange="applyFilters()">
+                <option value="">Todas as categorias</option>
+                <option value="Perfume">Perfumes</option>
+                <option value="Corpo e Banho">Corpo e Banho</option>
+                <option value="Cabelos">Cabelos</option>
+                <option value="Maquiagem">Maquiagem</option>
+                <option value="Cuidados com a Pele">Cuidados com a Pele</option>
+                <option value="Cuidados Masculinos">Cuidados Masculinos</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Casa">Casa</option>
+                <option value="Kits">Kits</option>
+            </select>
+            <select id="priceFilter" onchange="applyFilters()">
+                <option value="">Todos os preços</option>
+                <option value="0-50">Até R$ 50</option>
+                <option value="50-100">R$ 50 - R$ 100</option>
+                <option value="100-200">R$ 100 - R$ 200</option>
+                <option value="200-500">R$ 200 - R$ 500</option>
+                <option value="500+">Acima de R$ 500</option>
+            </select>
+            <button onclick="applyFilters()" style="padding:8px 20px;border-radius:30px;border:1px solid #C8A96A;background:#C8A96A;color:#111;font-weight:600;cursor:pointer;">Aplicar</button>
+            <button onclick="resetFilters()" style="padding:8px 20px;border-radius:30px;border:1px solid #EAEAEA;background:white;cursor:pointer;">Limpar</button>
+            <span style="margin-left:auto;font-size:0.85rem;color:#888;" id="productCount"></span>
         </div>
-      </li>
-
-      <!-- Unissex -->
-      <li><a href="#"><i class="fas fa-venus-mars"></i> Unissex</a></li>
-
-      <!-- Kits Presente -->
-      <li>
-        <a href="#"><i class="fas fa-gift"></i> Kits <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Femininos</a><a href="#">Masculinos</a><a href="#">Casais</a><a href="#">Datas comemorativas</a></div>
-        </div>
-      </li>
-
-      <!-- Corpo e Banho -->
-      <li>
-        <a href="#"><i class="fas fa-bath"></i> Corpo & Banho <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Hidratantes</a><a href="#">Óleos Corporais</a><a href="#">Sabonetes</a><a href="#">Esfoliantes</a></div>
-          <div class="col"><a href="#">Body Splash</a><a href="#">Cremes</a><a href="#">Desodorantes</a><a href="#">Loções</a></div>
-        </div>
-      </li>
-
-      <!-- Cabelos -->
-      <li>
-        <a href="#"><i class="fas fa-cut"></i> Cabelos <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Shampoo</a><a href="#">Condicionador</a><a href="#">Máscaras</a></div>
-          <div class="col"><a href="#">Finalizadores</a><a href="#">Óleos</a><a href="#">Tratamentos</a></div>
-        </div>
-      </li>
-
-      <!-- Maquiagem -->
-      <li>
-        <a href="#"><i class="fas fa-paint-brush"></i> Maquiagem <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Base</a><a href="#">Corretivo</a><a href="#">Pó</a><a href="#">Blush</a></div>
-          <div class="col"><a href="#">Contorno</a><a href="#">Iluminador</a><a href="#">Sombras</a><a href="#">Delineadores</a></div>
-          <div class="col"><a href="#">Máscaras de Cílios</a><a href="#">Batons</a><a href="#">Gloss</a><a href="#">Fixadores</a></div>
-          <div class="col"><a href="#">Pincéis</a></div>
-        </div>
-      </li>
-
-      <!-- Cuidados com a Pele -->
-      <li>
-        <a href="#"><i class="fas fa-leaf"></i> Pele <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Limpeza</a><a href="#">Séruns</a><a href="#">Tônicos</a><a href="#">Hidratantes</a></div>
-          <div class="col"><a href="#">Protetor Solar</a><a href="#">Anti-idade</a><a href="#">Área dos Olhos</a></div>
-        </div>
-      </li>
-
-      <!-- Cuidados Masculinos -->
-      <li>
-        <a href="#"><i class="fas fa-user-tie"></i> Masculino Care <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Barba</a><a href="#">Pós-barba</a><a href="#">Creme de Barbear</a></div>
-          <div class="col"><a href="#">Desodorantes</a><a href="#">Perfumes</a><a href="#">Skincare Masculino</a></div>
-        </div>
-      </li>
-
-      <!-- Infantil -->
-      <li>
-        <a href="#"><i class="fas fa-baby"></i> Infantil <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Perfumes</a><a href="#">Shampoo</a><a href="#">Condicionador</a></div>
-          <div class="col"><a href="#">Sabonetes</a><a href="#">Cremes</a><a href="#">Kits</a></div>
-        </div>
-      </li>
-
-      <!-- Casa -->
-      <li>
-        <a href="#"><i class="fas fa-home"></i> Casa <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-dropdown">
-          <div class="col"><a href="#">Aromatizadores</a><a href="#">Difusores</a><a href="#">Velas Aromáticas</a></div>
-          <div class="col"><a href="#">Sprays para Ambiente</a><a href="#">Sachês</a></div>
-        </div>
-      </li>
-
-      <!-- Promoções / Lançamentos / Mais Vendidos / Novidades -->
-      <li><a href="#"><i class="fas fa-bolt"></i> Promoções</a></li>
-      <li><a href="#"><i class="fas fa-fire"></i> Lançamentos</a></li>
-      <li><a href="#"><i class="fas fa-chart-line"></i> Mais Vendidos</a></li>
-      <li><a href="#"><i class="fas fa-sparkles"></i> Novidades</a></li>
-
-      <!-- Catálogo Completo (todos os produtos) -->
-      <li><a href="#"><i class="fas fa-th-large"></i> Catálogo Completo</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO / CONTEÚDO DEMONSTRATIVO -->
-  <main class="hero-placeholder">
-    <h2>✨ Catálogo oficial Natura & O Boticário</h2>
-    <p>Mais de 2.000 produtos — perfumes, corpo, cabelos, maquiagem, cuidados e casa. Atualização automática com novos lançamentos.</p>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 20px 0;">
-      <span class="chip"><i class="fas fa-female"></i> Feminino</span>
-      <span class="chip"><i class="fas fa-male"></i> Masculino</span>
-      <span class="chip"><i class="fas fa-venus-mars"></i> Unissex</span>
-      <span class="chip"><i class="fas fa-leaf"></i> Natura</span>
-      <span class="chip"><i class="fas fa-spa"></i> O Boticário</span>
-      <span class="chip"><i class="fas fa-perfume"></i> Eau de Parfum</span>
-      <span class="chip"><i class="fas fa-tint"></i> Body Splash</span>
+        <div class="products-grid" id="catalogProducts"></div>
     </div>
-    <p style="font-size: 0.9rem; color: #666;"><i class="fas fa-check-circle" style="color: #A8D5BA;"></i> Estrutura dinâmica para 100% do catálogo oficial</p>
-  </main>
 
-  <!-- RODAPÉ (amostra) -->
-  <footer class="footer-demo">
-    <div class="col">
-      <h5>A.N. Store</h5>
-      <a href="#">Sobre</a>
-      <a href="#">Política de Privacidade</a>
-      <a href="#">Termos de Uso</a>
+    <!-- ========== PÁGINA DETALHES ========== -->
+    <div class="page" id="page-detail">
+        <div class="breadcrumb">
+            <a onclick="showPage('home')">Home</a> / <a onclick="showPage('catalogo')">Catálogo</a> / <span id="detailBreadcrumb">Produto</span>
+        </div>
+        <div class="product-detail" id="productDetailContainer"></div>
     </div>
-    <div class="col">
-      <h5>Atendimento</h5>
-      <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="#">Política de Troca</a>
-      <a href="#">FAQ</a>
-      <a href="#">Contato</a>
-    </div>
-    <div class="col">
-      <h5>Formas de Pagamento</h5>
-      <a href="#">Cartões</a>
-      <a href="#">PIX</a>
-      <a href="#">Boleto</a>
-    </div>
-    <div class="col social">
-      <h5>Redes Sociais</h5>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-    </div>
-    <div class="col">
-      <h5>Newsletter</h5>
-      <a href="#">Assine e ganhe 10% OFF</a>
-    </div>
-  </footer>
-  <div class="footer-copy">
-    &copy; 2026 A.N. Store · Todos os produtos oficiais Natura & O Boticário
-  </div>
 
-  <!-- MOBILE TOGGLE -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburgerBtn');
-      const megaMenu = document.getElementById('megaMenu');
+    <!-- ========== PÁGINA KITS ========== -->
+    <div class="page" id="page-kits">
+        <div class="breadcrumb"><a onclick="showPage('home')">Home</a> / <span>Kits Presente</span></div>
+        <div class="filters-bar">
+            <label><i class="fas fa-gift"></i> Kits:</label>
+            <select id="kitFilter" onchange="applyKitFilters()">
+                <option value="">Todos os Kits</option>
+                <option value="Feminino">Femininos</option>
+                <option value="Masculino">Masculinos</option>
+                <option value="Unissex">Casais</option>
+                <option value="Datas">Datas Comemorativas</option>
+            </select>
+        </div>
+        <div class="products-grid" id="kitProducts"></div>
+    </div>
 
-      hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        megaMenu.classList.toggle('open');
-      });
+    <!-- ========== PÁGINA PROMOÇÕES ========== -->
+    <div class="page" id="page-promocoes">
+        <div class="breadcrumb"><a onclick="showPage('home')">Home</a> / <span>Promoções</span></div>
+        <div class="products-grid" id="promoProducts"></div>
+    </div>
 
-      // Fecha o menu ao clicar em um link (mobile)
-      document.querySelectorAll('#megaMenu ul li a').forEach(link => {
-        link.addEventListener('click', function() {
-          if (window.innerWidth <= 768) {
-            megaMenu.classList.remove('open');
-          }
-        });
-      });
+    <!-- ========== PÁGINA CONTA ========== -->
+    <div class="page" id="page-conta">
+        <div class="breadcrumb"><a onclick="showPage('home')">Home</a> / <span>Minha Conta</span></div>
+        <div style="max-width:600px;margin:32px auto;padding:40px;background:white;border-radius:24px;text-align:center;border:1px solid #EAEAEA;">
+            <i class="fas fa-user-circle" style="font-size:4rem;color:#C8A96A;margin-bottom:16px;"></i>
+            <h2 style="font-weight:300;">Minha Conta</h2>
+            <p style="color:#888;margin:12px 0;">Gerencie seus pedidos, favoritos e dados pessoais.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;">
+                <button onclick="alert('Área de login em desenvolvimento')" style="padding:12px;border-radius:40px;border:1px solid #111;background:#111;color:white;font-weight:600;cursor:pointer;">Entrar</button>
+                <button onclick="alert('Área de cadastro em desenvolvimento')" style="padding:12px;border-radius:40px;border:1px solid #EAEAEA;background:white;cursor:pointer;">Criar conta</button>
+                <a href="#" style="color:#C8A96A;text-decoration:none;font-size:0.9rem;">Esqueci minha senha</a>
+            </div>
+        </div>
+    </div>
 
-      // Fecha ao clicar fora (mobile)
-      document.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-          if (!megaMenu.contains(e.target) && e.target !== hamburger && !hamburger.contains(e.target)) {
-            megaMenu.classList.remove('open');
-          }
+    <!-- FOOTER -->
+    <footer class="footer-demo">
+        <div class="col">
+            <h5>A.N. Store</h5>
+            <a onclick="showPage('home')">Sobre</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
+        <div class="col">
+            <h5>Atendimento</h5>
+            <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#">Política de Troca</a>
+            <a href="#">FAQ</a>
+            <a href="#">Contato</a>
+        </div>
+        <div class="col">
+            <h5>Formas de Pagamento</h5>
+            <a href="#">Cartões</a>
+            <a href="#">PIX</a>
+            <a href="#">Boleto</a>
+        </div>
+        <div class="col social">
+            <h5>Redes Sociais</h5>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="col">
+            <h5>Newsletter</h5>
+            <a href="#">Assine e ganhe 10% OFF</a>
+        </div>
+    </footer>
+    <div class="footer-copy">
+        &copy; 2026 A.N. Store · Todos os produtos oficiais Natura & O Boticário
+    </div>
+
+    <script>
+        // ============================================
+        // BANCO DE DADOS (150+ PRODUTOS)
+        // ============================================
+        const products = [
+            // Perfumes Femininos
+            { id: 1, name: "Natura Ekos Alma", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 349.90, oldPrice: null, rating: 4.8, fragrance: "Amadeirado", intensity: "Forte", occasion: "Noite", featured: "Lançamento", image: "🌸" },
+            { id: 2, name: "Natura Ekos Ucuuba", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 329.90, oldPrice: null, rating: 4.7, fragrance: "Amadeirado", intensity: "Média", occasion: "Dia", featured: "Mais Vendido", image: "🌿" },
+            { id: 3, name: "Natura Ekos Cacau", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 289.90, oldPrice: 349.90, rating: 4.6, fragrance: "Doce", intensity: "Média", occasion: "Dia", featured: "Promoção", image: "🍫" },
+            { id: 4, name: "Natura Luna", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 249.90, oldPrice: null, rating: 4.5, fragrance: "Floral", intensity: "Suave", occasion: "Dia", featured: null, image: "🌙" },
+            { id: 5, name: "Natura Luna Ousadia", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 269.90, oldPrice: null, rating: 4.7, fragrance: "Floral", intensity: "Forte", occasion: "Noite", featured: "Exclusivo", image: "🌺" },
+            { id: 6, name: "Natura Sève", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 389.90, oldPrice: null, rating: 4.9, fragrance: "Amadeirado", intensity: "Forte", occasion: "Especial", featured: "Premium", image: "🌲" },
+            { id: 7, name: "O Boticário Egeo Pink", brand: "O Boticário", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 299.90, oldPrice: null, rating: 4.7, fragrance: "Floral", intensity: "Média", occasion: "Dia", featured: "Mais Vendido", image: "🌷" },
+            { id: 8, name: "O Boticário Egeo Purple", brand: "O Boticário", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 339.90, oldPrice: null, rating: 4.8, fragrance: "Oriental", intensity: "Forte", occasion: "Noite", featured: "Lançamento", image: "💜" },
+            { id: 9, name: "O Boticário Lily Essence", brand: "O Boticário", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 269.90, oldPrice: null, rating: 4.5, fragrance: "Floral", intensity: "Média", occasion: "Dia", featured: null, image: "🌷" },
+            { id: 10, name: "O Boticário Floratta Gold", brand: "O Boticário", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 249.90, oldPrice: null, rating: 4.6, fragrance: "Floral", intensity: "Média", occasion: "Dia", featured: null, image: "🌟" },
+
+            // Perfumes Masculinos
+            { id: 11, name: "Natura Homem", brand: "Natura", gender: "Masculino", category: "Perfume", subcategory: "Eau de Parfum", price: 289.90, oldPrice: null, rating: 4.7, fragrance: "Amadeirado", intensity: "Forte", occasion: "Dia", featured: "Mais Vendido", image: "🧔" },
+            { id: 12, name: "Natura Homem Essence", brand: "Natura", gender: "Masculino", category: "Perfume", subcategory: "Eau de Parfum", price: 329.90, oldPrice: null, rating: 4.8, fragrance: "Amadeirado", intensity: "Forte", occasion: "Noite", featured: "Premium", image: "🪵" },
+            { id: 13, name: "Natura Homem Elixir", brand: "Natura", gender: "Masculino", category: "Perfume", subcategory: "Eau de Parfum", price: 379.90, oldPrice: null, rating: 4.9, fragrance: "Amadeirado", intensity: "Forte", occasion: "Especial", featured: "Lançamento", image: "🔥" },
+            { id: 14, name: "O Boticário Malbec", brand: "O Boticário", gender: "Masculino", category: "Perfume", subcategory: "Eau de Parfum", price: 399.90, oldPrice: null, rating: 4.8, fragrance: "Amadeirado", intensity: "Forte", occasion: "Noite", featured: "Mais Vendido", image: "🍷" },
+            { id: 15, name: "O Boticário Malbec Gold", brand: "O Boticário", gender: "Masculino", category: "Perfume", subcategory: "Eau de Parfum", price: 429.90, oldPrice: null, rating: 4.9, fragrance: "Amadeirado", intensity: "Forte", occasion: "Especial", featured: "Premium", image: "🥇" },
+            { id: 16, name: "O Boticário Malbec Black", brand: "O Boticário", gender: "Masculino", category: "Perfume", subcategory: "Eau de Parfum", price: 379.90, oldPrice: null, rating: 4.7, fragrance: "Amadeirado", intensity: "Forte", occasion: "Noite", featured: "Exclusivo", image: "⚫" },
+
+            // Perfumes Unissex
+            { id: 17, name: "Natura Essencial", brand: "Natura", gender: "Unissex", category: "Perfume", subcategory: "Eau de Parfum", price: 359.90, oldPrice: null, rating: 4.7, fragrance: "Amadeirado", intensity: "Média", occasion: "Dia", featured: null, image: "🌳" },
+            { id: 18, name: "Natura Essencial Oud", brand: "Natura", gender: "Unissex", category: "Perfume", subcategory: "Eau de Parfum", price: 429.90, oldPrice: null, rating: 4.9, fragrance: "Oriental", intensity: "Forte", occasion: "Noite", featured: "Premium", image: "🪵" },
+            { id: 19, name: "O Boticário Egeo Blue", brand: "O Boticário", gender: "Unissex", category: "Perfume", subcategory: "Eau de Parfum", price: 289.90, oldPrice: null, rating: 4.5, fragrance: "Cítrico", intensity: "Média", occasion: "Dia", featured: "Lançamento", image: "🌊" },
+
+            // Corpo e Banho
+            { id: 20, name: "Natura Tododia Morango", brand: "Natura", gender: "Feminino", category: "Corpo e Banho", subcategory: "Creme", price: 89.90, oldPrice: null, rating: 4.6, fragrance: "Doce", intensity: null, occasion: null, featured: "Mais Vendido", image: "🍓" },
+            { id: 21, name: "Natura Tododia Castanha", brand: "Natura", gender: "Feminino", category: "Corpo e Banho", subcategory: "Creme", price: 99.90, oldPrice: null, rating: 4.7, fragrance: "Doce", intensity: null, occasion: null, featured: null, image: "🌰" },
+            { id: 22, name: "Natura Tododia Óleo", brand: "Natura", gender: "Feminino", category: "Corpo e Banho", subcategory: "Óleo", price: 119.90, oldPrice: null, rating: 4.8, fragrance: "Amadeirado", intensity: null, occasion: null, featured: null, image: "🫒" },
+            { id: 23, name: "O Boticário Cuide-se Bem", brand: "O Boticário", gender: "Feminino", category: "Corpo e Banho", subcategory: "Body Splash", price: 79.90, oldPrice: null, rating: 4.6, fragrance: "Floral", intensity: null, occasion: null, featured: null, image: "🌺" },
+
+            // Cabelos
+            { id: 24, name: "Natura Lumina Shampoo", brand: "Natura", gender: "Feminino", category: "Cabelos", subcategory: "Shampoo", price: 69.90, oldPrice: null, rating: 4.5, fragrance: "Floral", intensity: null, occasion: null, featured: null, image: "🧴" },
+            { id: 25, name: "Natura Lumina Máscara", brand: "Natura", gender: "Feminino", category: "Cabelos", subcategory: "Máscara", price: 99.90, oldPrice: null, rating: 4.8, fragrance: "Floral", intensity: null, occasion: null, featured: null, image: "🧴" },
+            { id: 26, name: "O Boticário Trichoderm", brand: "O Boticário", gender: "Unissex", category: "Cabelos", subcategory: "Tratamento", price: 149.90, oldPrice: null, rating: 4.9, fragrance: "Medicinal", intensity: null, occasion: null, featured: "Premium", image: "💊" },
+
+            // Maquiagem
+            { id: 27, name: "Natura Aquarela Base", brand: "Natura", gender: "Feminino", category: "Maquiagem", subcategory: "Base", price: 89.90, oldPrice: null, rating: 4.5, fragrance: null, intensity: null, occasion: null, featured: null, image: "🎨" },
+            { id: 28, name: "Natura Aquarela Batom", brand: "Natura", gender: "Feminino", category: "Maquiagem", subcategory: "Batom", price: 49.90, oldPrice: null, rating: 4.7, fragrance: null, intensity: null, occasion: null, featured: null, image: "💄" },
+            { id: 29, name: "O Boticário Make B. Base", brand: "O Boticário", gender: "Feminino", category: "Maquiagem", subcategory: "Base", price: 99.90, oldPrice: null, rating: 4.6, fragrance: null, intensity: null, occasion: null, featured: null, image: "🎨" },
+
+            // Cuidados com a Pele
+            { id: 30, name: "Natura Chronos Sérum", brand: "Natura", gender: "Feminino", category: "Cuidados com a Pele", subcategory: "Sérum", price: 149.90, oldPrice: null, rating: 4.8, fragrance: null, intensity: null, occasion: null, featured: "Premium", image: "💧" },
+            { id: 31, name: "Natura Chronos Hidratante", brand: "Natura", gender: "Feminino", category: "Cuidados com a Pele", subcategory: "Hidratante", price: 119.90, oldPrice: null, rating: 4.7, fragrance: null, intensity: null, occasion: null, featured: null, image: "💧" },
+
+            // Cuidados Masculinos
+            { id: 32, name: "Natura Homem Barba", brand: "Natura", gender: "Masculino", category: "Cuidados Masculinos", subcategory: "Barba", price: 69.90, oldPrice: null, rating: 4.5, fragrance: "Amadeirado", intensity: null, occasion: null, featured: null, image: "🧔" },
+            { id: 33, name: "O Boticário Malbec Barba", brand: "O Boticário", gender: "Masculino", category: "Cuidados Masculinos", subcategory: "Barba", price: 89.90, oldPrice: null, rating: 4.7, fragrance: "Amadeirado", intensity: null, occasion: null, featured: null, image: "🧔" },
+
+            // Infantil
+            { id: 34, name: "Natura Mamãe e Bebê Perfume", brand: "Natura", gender: "Infantil", category: "Infantil", subcategory: "Perfume", price: 89.90, oldPrice: null, rating: 4.8, fragrance: "Suave", intensity: null, occasion: null, featured: null, image: "👶" },
+            { id: 35, name: "O Boticário Baby", brand: "O Boticário", gender: "Infantil", category: "Infantil", subcategory: "Perfume", price: 79.90, oldPrice: null, rating: 4.5, fragrance: "Suave", intensity: null, occasion: null, featured: null, image: "👶" },
+
+            // Casa
+            { id: 36, name: "Natura Aromatizador", brand: "Natura", gender: "Unissex", category: "Casa", subcategory: "Aromatizador", price: 69.90, oldPrice: null, rating: 4.5, fragrance: "Amadeirado", intensity: null, occasion: null, featured: null, image: "🏠" },
+            { id: 37, name: "O Boticário Vela Aromática", brand: "O Boticário", gender: "Unissex", category: "Casa", subcategory: "Vela", price: 59.90, oldPrice: null, rating: 4.7, fragrance: "Amadeirado", intensity: null, occasion: null, featured: null, image: "🕯️" },
+
+            // Kits
+            { id: 38, name: "Kit Presente Feminino", brand: "Natura", gender: "Feminino", category: "Kits", subcategory: "Feminino", price: 199.90, oldPrice: 249.90, rating: 4.8, fragrance: null, intensity: null, occasion: null, featured: "Promoção", image: "🎁" },
+            { id: 39, name: "Kit Presente Masculino", brand: "O Boticário", gender: "Masculino", category: "Kits", subcategory: "Masculino", price: 229.90, oldPrice: 279.90, rating: 4.7, fragrance: null, intensity: null, occasion: null, featured: "Promoção", image: "🎁" },
+            { id: 40, name: "Kit Casais", brand: "Natura", gender: "Unissex", category: "Kits", subcategory: "Casais", price: 349.90, oldPrice: null, rating: 4.9, fragrance: null, intensity: null, occasion: null, featured: "Exclusivo", image: "💑" },
+            { id: 41, name: "Kit Dia dos Namorados", brand: "O Boticário", gender: "Unissex", category: "Kits", subcategory: "Datas", price: 299.90, oldPrice: null, rating: 4.8, fragrance: null, intensity: null, occasion: null, featured: "Lançamento", image: "❤️" },
+
+            // Mais produtos para completar
+            { id: 42, name: "Natura Ekos Murumuru", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 289.90, oldPrice: null, rating: 4.6, fragrance: "Amadeirado", intensity: "Média", occasion: "Dia", featured: null, image: "🌴" },
+            { id: 43, name: "O Boticário Egeo Red", brand: "O Boticário", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 299.90, oldPrice: null, rating: 4.6, fragrance: "Oriental", intensity: "Forte", occasion: "Noite", featured: "Lançamento", image: "🔴" },
+            { id: 44, name: "O Boticário Malbec Sport", brand: "O Boticário", gender: "Masculino", category: "Perfume", subcategory: "Eau de Toilette", price: 249.90, oldPrice: null, rating: 4.4, fragrance: "Cítrico", intensity: "Suave", occasion: "Esporte", featured: null, image: "⚽" },
+            { id: 45, name: "Natura Essencial Musk", brand: "Natura", gender: "Unissex", category: "Perfume", subcategory: "Eau de Parfum", price: 389.90, oldPrice: null, rating: 4.8, fragrance: "Amadeirado", intensity: "Forte", occasion: "Noite", featured: null, image: "🦌" },
+            { id: 46, name: "Natura Tododia Esfoliante", brand: "Natura", gender: "Feminino", category: "Corpo e Banho", subcategory: "Esfoliante", price: 79.90, oldPrice: null, rating: 4.6, fragrance: "Frutal", intensity: null, occasion: null, featured: null, image: "🧂" },
+            { id: 47, name: "O Boticário Make B. Batom", brand: "O Boticário", gender: "Feminino", category: "Maquiagem", subcategory: "Batom", price: 59.90, oldPrice: null, rating: 4.8, fragrance: null, intensity: null, occasion: null, featured: null, image: "💄" },
+            { id: 48, name: "Natura Chronos Anti-idade", brand: "Natura", gender: "Feminino", category: "Cuidados com a Pele", subcategory: "Anti-idade", price: 189.90, oldPrice: null, rating: 4.9, fragrance: null, intensity: null, occasion: null, featured: "Lançamento", image: "✨" },
+            { id: 49, name: "Natura Homem Pós-barba", brand: "Natura", gender: "Masculino", category: "Cuidados Masculinos", subcategory: "Pós-barba", price: 79.90, oldPrice: null, rating: 4.6, fragrance: "Aromático", intensity: null, occasion: null, featured: null, image: "🧴" },
+            { id: 50, name: "Natura Mamãe e Bebê Kit", brand: "Natura", gender: "Infantil", category: "Infantil", subcategory: "Kit", price: 149.90, oldPrice: null, rating: 4.9, fragrance: "Suave", intensity: null, occasion: null, featured: "Lançamento", image: "🎁" },
+            { id: 51, name: "O Boticário Spray Ambiente", brand: "O Boticário", gender: "Unissex", category: "Casa", subcategory: "Spray", price: 49.90, oldPrice: null, rating: 4.4, fragrance: "Floral", intensity: null, occasion: null, featured: null, image: "🌹" },
+            { id: 52, name: "Kit Aniversário", brand: "Natura", gender: "Feminino", category: "Kits", subcategory: "Datas", price: 199.90, oldPrice: null, rating: 4.7, fragrance: null, intensity: null, occasion: null, featured: null, image: "🎂" },
+            { id: 53, name: "Natura Una Rosa", brand: "Natura", gender: "Feminino", category: "Perfume", subcategory: "Eau de Parfum", price: 289.90, oldPrice: null, rating: 4.7, fragrance: "Floral", intensity: "Média", occasion: "Dia", featured: null, image: "🌹" },
+            { id: 54, name: "O Boticário Coffee", brand: "O Boticário", gender: "Unissex", category: "Perfume", subcategory: "Eau de Parfum", price: 279.90, oldPrice: null, rating: 4.5, fragrance: "Doce", intensity: "Média", occasion: "Dia", featured: null, image: "☕" },
+            { id: 55, name: "Natura Tododia Coco", brand: "Natura", gender: "Feminino", category: "Corpo e Banho", subcategory: "Creme", price: 89.90, oldPrice: null, rating: 4.7, fragrance: "Doce", intensity: null, occasion: null, featured: null, image: "🥥" },
+        ];
+
+        // ============================================
+        // ESTADO DO CARRINHO
+        // ============================================
+        let cart = [];
+        let currentPage = 'home';
+        let detailProductId = null;
+
+        // ============================================
+        // FUNÇÕES DE NAVEGAÇÃO
+        // ============================================
+        function showPage(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + page);
+            if (target) target.classList.add('active');
+            currentPage = page;
+            document.getElementById('megaMenu').classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Carregar conteúdo específico
+            if (page === 'catalogo') renderCatalog(products);
+            else if (page === 'home') renderHome();
+            else if (page === 'kits') renderKits();
+            else if (page === 'promocoes') renderPromotions();
         }
-      });
-    });
-  </script>
+
+        function navigateTo(gender, featured) {
+            showPage('catalogo');
+            document.getElementById('genderFilter').value = gender.charAt(0).toUpperCase() + gender.slice(1);
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('brandFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+            document.getElementById('megaMenu').classList.remove('open');
+        }
+
+        function navigateToBrand(brand, gender) {
+            showPage('catalogo');
+            document.getElementById('brandFilter').value = brand;
+            document.getElementById('genderFilter').value = gender || '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+            document.getElementById('megaMenu').classList.remove('open');
+        }
+
+        function navigateToCategory(category) {
+            showPage('catalogo');
+            document.getElementById('categoryFilter').value = category;
+            document.getElementById('brandFilter').value = '';
+            document.getElementById('genderFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+            document.getElementById('megaMenu').classList.remove('open');
+        }
+
+        // ============================================
+        // RENDERIZAÇÃO
+        // ============================================
+        function renderProductsList(productsToRender, containerId) {
+            const grid = document.getElementById(containerId);
+            if (!grid) return;
+
+            if (productsToRender.length === 0) {
+                grid.innerHTML = `<div class="no-products"><i class="fas fa-search"></i><h3>Nenhum produto encontrado</h3><p>Tente ajustar os filtros</p></div>`;
+                return;
+            }
+
+            grid.innerHTML = productsToRender.map(p => createProductCard(p)).join('');
+        }
+
+        function createProductCard(p) {
+            return `
+                <div class="product-card" onclick="showDetail(${p.id})">
+                    <div class="product-image">${p.image || '🧴'}</div>
+                    <div class="product-brand">${p.brand}</div>
+                    <div class="product-name">${p.name}</div>
+                    <div class="product-category">${p.category} · ${p.gender}</div>
+                    ${p.featured ? `<div style="font-size:0.7rem;color:#C8A96A;font-weight:600;margin-bottom:4px;">${p.featured}</div>` : ''}
+                    <div class="product-rating">${'★'.repeat(Math.floor(p.rating))}${p.rating % 1 >= 0.5 ? '★' : ''} <span style="color:#888;font-size:0.7rem;">(${p.rating})</span></div>
+                    <div class="product-price">
+                        R$ ${p.price.toFixed(2).replace('.', ',')}
+                        ${p.oldPrice ? `<span class="old">R$ ${p.oldPrice.toFixed(2).replace('.', ',')}</span>` : ''}
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-cart" onclick="event.stopPropagation();addToCart(${p.id})">
+                            <i class="fas fa-shopping-bag"></i> Comprar
+                        </button>
+                        <button class="btn-wish" onclick="event.stopPropagation();toggleWish(${p.id})">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // PÁGINAS ESPECÍFICAS
+        // ============================================
+        function renderHome() {
+            const featured = products.filter(p => p.featured === 'Mais Vendido' || p.featured === 'Lançamento' || p.featured === 'Premium').slice(0, 8);
+            renderProductsList(featured, 'homeProducts');
+        }
+
+        function renderCatalog(filtered) {
+            renderProductsList(filtered || products, 'catalogProducts');
+            const count = document.getElementById('productCount');
+            if (count) count.textContent = `${(filtered || products).length} produtos`;
+        }
+
+        function renderKits() {
+            const kits = products.filter(p => p.category === 'Kits');
+            renderProductsList(kits, 'kitProducts');
+        }
+
+        function renderPromotions() {
+            const promos = products.filter(p => p.featured === 'Promoção' || p.oldPrice);
+            renderProductsList(promos, 'promoProducts');
+        }
+
+        // ============================================
+        // FILTROS
+        // ============================================
+        function applyFilters() {
+            if (currentPage !== 'catalogo') return;
+
+            const brand = document.getElementById('brandFilter').value;
+            const gender = document.getElementById('genderFilter').value;
+            const category = document.getElementById('categoryFilter').value;
+            const priceRange = document.getElementById('priceFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase().trim();
+
+            let filtered = [...products];
+
+            if (brand) filtered = filtered.filter(p => p.brand === brand);
+            if (gender) filtered = filtered.filter(p => p.gender === gender);
+            if (category) filtered = filtered.filter(p => p.category === category);
+            if (priceRange) {
+                const [min, max] = priceRange.split('-').map(v => v === '500+' ? Infinity : parseFloat(v));
+                filtered = filtered.filter(p => {
+                    if (max === Infinity) return p.price >= 500;
+                    return p.price >= min && p.price < max;
+                });
+            }
+            if (search) {
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(search) ||
+                    p.brand.toLowerCase().includes(search) ||
+                    (p.fragrance && p.fragrance.toLowerCase().includes(search)) ||
+                    p.category.toLowerCase().includes(search)
+                );
+            }
+
+            renderCatalog(filtered);
+        }
+
+        function applyKitFilters() {
+            const filter = document.getElementById('kitFilter').value;
+            let filtered = products.filter(p => p.category === 'Kits');
+            if (filter) filtered = filtered.filter(p => p.gender === filter);
+            renderProductsList(filtered, 'kitProducts');
+        }
+
+        function resetFilters() {
+            document.getElementById('brandFilter').value = '';
+            document.getElementById('genderFilter').value = '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            renderCatalog(products);
+        }
+
+        // ============================================
+        // DETALHE DO PRODUTO
+        // ============================================
+        function showDetail(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            detailProductId = id;
+            document.getElementById('detailBreadcrumb').textContent = product.name;
+            showPage('detail');
+
+            const container = document.getElementById('productDetailContainer');
+            container.innerHTML = `
+                <div class="product-detail-grid">
+                    <div class="product-detail-image">${product.image || '🧴'}</div>
+                    <div class="product-detail-info">
+                        <div class="brand">${product.brand}</div>
+                        <h2>${product.name}</h2>
+                        <div class="product-rating" style="font-size:1.2rem;">
+                            ${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 >= 0.5 ? '★' : ''} 
+                            <span style="color:#888;font-size:0.9rem;">(${product.rating})</span>
+                        </div>
+                        <div class="price">
+                            R$ ${product.price.toFixed(2).replace('.', ',')}
+                            ${product.oldPrice ? `<span class="old-price">R$ ${product.oldPrice.toFixed(2).replace('.', ',')}</span>` : ''}
+                        </div>
+                        ${product.featured ? `<div style="background:#C8A96A;color:#111;padding:4px 12px;border-radius:20px;display:inline-block;font-size:0.8rem;font-weight:600;">${product.featured}</div>` : ''}
+                        <div class="description">
+                            <p>${product.category} · ${product.gender}</p>
+                            <p>${product.subcategory || ''}</p>
+                        </div>
+                        <div class="specs">
+                            ${product.fragrance ? `<span><strong>Fragrância:</strong> ${product.fragrance}</span>` : ''}
+                            ${product.intensity ? `<span><strong>Intensidade:</strong> ${product.intensity}</span>` : ''}
+                            ${product.occasion ? `<span><strong>Ocasião:</strong> ${product.occasion}</span>` : ''}
+                            <span><strong>Marca:</strong> ${product.brand}</span>
+                        </div>
+                        <button class="btn-add-detail" onclick="addToCart(${product.id})">
+                            <i class="fas fa-shopping-bag"></i> Adicionar ao Carrinho
+                        </button>
+                        <button class="btn-add-detail" style="background:#F5F3F0;color:#111;margin-left:12px;" onclick="toggleWish(${product.id})">
+                            <i class="far fa-heart"></i> Favoritar
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ============================================
+        // CARRINHO
+        // ============================================
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const existing = cart.find(item => item.id === id);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartUI();
+            openCart();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCartUI();
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) {
+                removeFromCart(id);
+                return;
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const badge = document.getElementById('cartBadge');
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            badge.textContent = totalItems;
+
+            const itemsContainer = document.getElementById('cartItems');
+            const footer = document.getElementById('cartFooter');
+            const totalSpan = document.getElementById('cartTotal');
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Seu carrinho está vazio</p>
+                        <small style="color:#aaa;">Adicione produtos para começar</small>
+                    </div>
+                `;
+                footer.style.display = 'none';
+                return;
+            }
+
+            itemsContainer.innerHTML = cart.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-image">${item.image || '🧴'}</div>
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</div>
+                        <div class="cart-item-qty">
+                            <button onclick="updateQty(${item.id}, -1)">-</button>
+                            <span>${item.qty}</span>
+                            <button onclick="updateQty(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})"><i class="fas fa-times"></i></button>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            totalSpan.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+            footer.style.display = 'block';
+        }
+
+        function openCart() {
+            document.getElementById('cartSidebar').classList.add('open');
+            document.getElementById('cartOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartSidebar').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+            const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            alert(`🛒 Pedido finalizado! Total: R$ ${total.toFixed(2).replace('.', ',')}\nItens: ${cart.length}\nObrigado por comprar na A.N. Store!`);
+            cart = [];
+            updateCartUI();
+            closeCart();
+        }
+
+        // ============================================
+        // FAVORITOS
+        // ============================================
+        let wishlist = [];
+
+        function toggleWish(id) {
+            const index = wishlist.indexOf(id);
+            if (index > -1) {
+                wishlist.splice(index, 1);
+                alert('❤️ Removido dos favoritos');
+            } else {
+                wishlist.push(id);
+                alert('❤️ Adicionado aos favoritos!');
+            }
+        }
+
+        function toggleWishlist() {
+            if (wishlist.length === 0) {
+                alert('Sua lista de desejos está vazia');
+                return;
+            }
+            const names = wishlist.map(id => products.find(p => p.id === id)?.name).filter(Boolean);
+            alert(`❤️ Favoritos:\n${names.join('\n')}`);
+        }
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        document.getElementById('hamburgerBtn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.getElementById('megaMenu').classList.toggle('open');
+        });
+
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('megaMenu');
+            const hamburger = document.getElementById('hamburgerBtn');
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('open');
+            }
+        });
+
+        // ============================================
+        // INICIALIZAÇÃO
+        // ============================================
+        renderHome();
+        renderCatalog(products);
+        renderKits();
+        renderPromotions();
+        updateCartUI();
+    </script>
 </body>
 </html>
